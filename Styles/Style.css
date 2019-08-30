@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    background: cornflowerblue;
+    text-align: center;
+    background-size: cover;
+
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    background: cornflowerblue;
+    text-align: center;
+    background-size: cover;
+
+}
+
+#logo img{
+    height: 1%;
+    width: 1%;
+    animation: logoAnimacao 2s forwards, piscadinha 1s 2s forwards;
+}
+
+#personagemSelecionado{
+    height: 40%;
+    display: flex;
+    justify-content: center;
+}
+#personagemSelecionado #personagemImagem{
+    height: 100%;
+    margin-right: 20px;
+}
+
+
+#personagemSelecionado #personagemImagem img{
+    height: 100%;
+    filter: drop-shadow(10px 0px 0px #000);
+
+}
+#detalhesPersonagem{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+   
+
+}
+
+#listaPersonagens{
+    width: 25%;
+    height: 20%;
+
+}
+
+p, h1{
+    margin: 0;
+}
+
+.atributo{
+    display: inline-block;
+    background: #ffde00;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+h1{
+   font-family:'Permanent Marker', cursive;
+   color: #fff;
+   text-shadow: 3px 0px black;
+
+}
+p{
+    font-family: 'Roboto', sans-serif;
+}
+.valor{
+color: #fff;
+font-weight: 800;
+margin-left: 7px;
+}
+.personagemSelecionavel{
+    height: 50%;
+    width: 20%;
+    float: left;
+    margin: 0;
+    border: 1px solid gray;
+    position: relative;
+
+}
+.personagemSelecionavel img{
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+    filter: grayscale(100%);
+}
+
+.personagemDesbloqueado{
+    background: gray;
+    display: inline-block;
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    padding: 13px;
+    width: 30%;
+    height: 7%;
+    bottom: 85%;
+    right: 11%;
+    color: #fff;
+    font-weight: 700;
+}
+
+#personagemSelecionado, #listaPersonagens{
+    opacity: 0;
+    animation: fadeInAnimacao 2s 3s forwards
+}
+
+.animado{
+    animation: trocaPersonagem 1s forwards;
+
+
+}
+.retratoSelecionado{
+   animation: piscadinha 1s forwards;
+}
+.invisivel{
+    display: none;
+}
+.nomeSelecionado{
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    position: absolute;
+    background: #ff00007e;
+    height: 20%;
+    bottom: 0%;
+    z-index: 1;
+    width: 100%;
+    padding-bottom: 10%;
+    font-size: 12px;
+}
+
+@keyframes logoAnimacao{
+    100%{
+
+        transform: rotate(-360deg) scale(15,15);
+    }
+
+    }
+
+
+@keyframes fadeInAnimacao{
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes trocaPersonagem{
+    0%{
+        transform: translateX(-50px);
+        opacity: 0;
+        filter: drop-shadow(20px 0px 0px #fff);
+
+    }
+    100%{
+        transform: translate(0px);
+        opacity: 1;
+        filter: drop-shadow(10px 0px 0px #000);
+    }
+}
+
+@keyframes piscadinha{
+    25%{
+        filter:brightness(200%);
+    }
+    50%{
+        filter:none;
+    }
+    75%{
+        filter:brightness(200%);
+    }
+    100%{
+        filter:none;
+    }
+}
