@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "ncp": "^2.0.0",
-    "parcel": "^1.12.3"
+    "parcel": "^2.8.2"
   }
 }
